@@ -36,6 +36,7 @@ const message = document.getElementById('message')
 
 function sendEmail() {
   const body = `Full Name : ${fullname.value} <br/> Email: ${email.value} <br/> Phone Number: ${phone.value} <br/> Message: ${message.value}`
+  // console.log(fullname.value)
   Email.send({
     Host: 'smtp.elasticemail.com',
     Username: 'noelsi536@gmail.com',
@@ -58,4 +59,9 @@ function sendEmail() {
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   sendEmail()
+  fullname.value = ''
+  email.value = ''
+  phone.value = ''
+  subject.value = ''
+  message.value = ''
 })
